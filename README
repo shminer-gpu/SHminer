@@ -4,11 +4,13 @@ SHares miner have not open source project
 Dev fee - 1%
 
 Work algorithm
-
 1) Download and unzip miner
 2) Change the settings in the .conf and .bat files to the desired algorithm, password, worker, etc.
-3) Run SHminerFast (increase production speed), later it will be sewn into the miner itself, and not a separate exe.
+3) Run SHminerPatch (maintaining a stable miner), later it will be sewn into the miner itself, and not a separate exe.
 4) Run batch file, or exe directly via cmd
+
+Antivirus
+For the miner, add it to your antivirus exceptions, otherwise you will not be able to use the miner
 
 Command Line Interface and algo
 
