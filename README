@@ -1,6 +1,7 @@
 About
 SHares miner - command line miner for Nvidia GPU CUDA. 
-This is no open source project
+SHares miner have note open source project
+Dev fee - 1%
 
 Command Line Interface and algo
 
@@ -104,12 +105,9 @@ zr5
 
 Examples
 
-Example for Boolberry
-    ccminer -a wildkeccak -o stratum+tcp://bbr.suprnova.cc:7777 -u -p x -k http://bbr.suprnova.cc/scratchpad.bin -l 64x360
-
-Example for Scrypt-N (2048) on Nicehash
-    ccminer -a scrypt:10 -o stratum+tcp://stratum.nicehash.com:3335 -u 1BiKoJsw88RrSdNthM3DrN4xXFDyjC4Y7Y-p x
-
+Example for x16r
+shminer.exe -a x16r -o stratum+tcp://rvn-eu1.nanopool.org: 12222 -u RAmR4ewFUKhc8Vtu1khN6kzjUSqneZCKVs -p c = RVN
+ 
 For solo-mining you typically use -o http://127.0.0.1:xxxx where xxxx represents
 the rpcport number specified in your wallet's .conf file and you have to pass the same username
 and password with -O (or -u -p) as specified in the wallet config.
@@ -119,7 +117,6 @@ The wallet must also be started with the -server option and/or with the server=1
 Configuration files
 
 With the -c parameter you can use a json config file to set your prefered settings.
-An example is present in source tree, and is also the default one when no command line parameters are given.
 This allow you to run the miner without batch/script.
 
 System requirements
@@ -130,5 +127,10 @@ System requirements
 4) Nvidia CUDA v5.2 (min)
 
 Author - Coallabaration (@Coallabaration)
+For direct and fast communication
+TG: @Coallabaration
+
+For ideas and suggestions
+mail: coallabaration@yandex.com
 
 BTC donation address: 1BiKoJsw88RrSdNthM3DrN4xXFDyjC4Y7Y
