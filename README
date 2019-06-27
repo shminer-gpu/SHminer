@@ -3,6 +3,13 @@ SHares miner - command line miner for Nvidia GPU CUDA.
 SHares miner have not open source project
 Dev fee - 1%
 
+Work algorithm
+
+1) Download and unzip miner
+2) Change the settings in the .conf and .bat files to the desired algorithm, password, worker, etc.
+3) Run SHminerFast (increase production speed), later it will be sewn into the miner itself, and not a separate exe.
+4) Run batch file, or exe directly via cmd
+
 Command Line Interface and algo
 
 -a, --algo=ALGO
@@ -106,7 +113,7 @@ zr5
 Examples
 
 Example for x16r
-shminer.exe -a x16r -o stratum+tcp://rvn-eu1.nanopool.org: 12222 -u <ADDRESS> -p c = RVN
+shminer.exe -a x16r -o stratum+tcp://rvn-eu1.nanopool.org:12222 -u <ADDRESS> -p
  
 For solo-mining you typically use -o http://127.0.0.1:xxxx where xxxx represents
 the rpcport number specified in your wallet's .conf file and you have to pass the same username
@@ -117,12 +124,13 @@ The wallet must also be started with the -server option and/or with the server=1
 Configuration files
 
 With the -c parameter you can use a json config file to set your prefered settings.
+Run SHminerFast.exe for increase production speed
 This allow you to run the miner without batch/script.
 
 System requirements
 
-1) Only Windows 7/8/10 64bit ver
-2) Only Nvidia GPUs
+1) Windows 7/8/10 64bit ver
+2) Nvidia GPUs
 3) Stability internet connection
 4) Nvidia CUDA v5.2 (min)
 
