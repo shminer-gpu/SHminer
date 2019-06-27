@@ -1,1 +1,134 @@
-SHminer - GPU miner for AMD/Nvidia video card
+About
+SHares miner - command line miner for Nvidia GPU CUDA. 
+This is no open source project
+
+Command Line Interface and algo
+
+-a, --algo=ALGO
+bitcore     
+cryptonight 
+decred      
+deep        
+equihash    
+groestl     
+keccak      
+keccakc     
+lyra2       
+lyra2v2     
+lyra2v3     
+lyra2z           
+phi2        
+polytimos   
+quark       
+qubit      
+scrypt      
+scrypt:N    
+s3          
+sha256t     
+sha256q     
+sib        
+skein       
+skein2     
+skunk       
+sonoa       
+stellite    
+tribus      
+x11evo      
+x12         
+x13         
+x14     
+x15        
+x16r        
+x16s       
+x17         
+vanilla     
+veltor      
+wildkeccak  
+zr5
+
+  -d, --devices         gives a comma separated list of CUDA device IDs
+                        to operate on. Device IDs start counting from 0!
+                      .
+
+  -i, --intensity=N[,N] GPU threads per call 8-25 (2^N + F, default: 0=auto)
+                        Decimals and multiple values are allowed for fine tuning
+      --cuda-schedule   Set device threads scheduling mode (default: auto)
+  -f, --diff-factor     Divide difficulty by this factor (default 1.0)
+  -m, --diff-multiplier Multiply difficulty by this value (default 1.0)
+  -o, --url=URL         URL of mining server
+  -O, --userpass=U:P    username:password pair for mining server
+  -u, --user=USERNAME   username for mining server
+  -p, --pass=PASSWORD   password for mining server
+      --cert=FILE       certificate for mining server using SSL
+  -x, --proxy=[PROTOCOL://]HOST[:PORT]  connect through a proxy
+  -t, --threads=N       number of miner threads (default: number of nVidia GPUs in your system)
+  -r, --retries=N       number of times to retry if a network call fails
+                          (default: retry indefinitely)
+  -R, --retry-pause=N   time to pause between retries, in seconds (default: 15)
+      --shares-limit    maximum shares to mine before exiting the program.
+      --time-limit      maximum time [s] to mine before exiting the program.
+  -T, --timeout=N       network timeout, in seconds (default: 300)
+  -s, --scantime=N      upper bound on time spent scanning current work when
+                        long polling is unavailable, in seconds (default: 5)
+      --submit-stale    ignore stale job checks, may create more rejected shares
+  -n, --ndevs           list cuda devices
+  -N, --statsavg        number of samples used to display hashrate (default: 30)
+      --no-gbt          disable getblocktemplate support (height check in solo)
+      --no-longpoll     disable X-Long-Polling support
+      --no-stratum      disable X-Stratum support
+  -q, --quiet           disable per-thread hashmeter output
+      --no-color        disable colored output
+  -D, --debug           enable debug output
+  -P, --protocol-dump   verbose dump of protocol-level activities
+      --api-remote      Allow remote control, like pool switching, imply --api-allow=0/0
+      --max-temp=N      Only mine if gpu temp is less than specified value
+      --max-rate=N[KMG] Only mine if net hashrate is less than specified value
+      --max-diff=N      Only mine if net difficulty is less than specified value
+      --max-log-rate    Interval to reduce per gpu hashrate logs (default: 3)
+      --pstate=0        will force the Geforce 9xx to run in P0 P-State
+      --plimit=150W     set the gpu power limit, allow multiple values for N cards
+                          on windows this parameter use percentages (like OC tools)
+      --tlimit=85       Set the gpu thermal limit
+      --keep-clocks     prevent reset clocks and/or power limit on exit
+      --hide-diff       Hide submitted shares diff and net difficulty
+  -B, --background      run the miner in the background
+      --benchmark       run in offline benchmark mode
+      --cputest         debug hashes from cpu algorithms
+      --cpu-affinity    set process affinity to specific cpu core(s) mask
+      --cpu-priority    set process priority (default: 0 idle, 2 normal to 5 highest)
+  -c, --config=FILE     load a JSON-format configuration file
+                        can be from an url with the http:// prefix
+  -V, --version         display version information and exit
+  -h, --help            display this help text and exit
+
+
+Examples
+
+Example for Boolberry
+    ccminer -a wildkeccak -o stratum+tcp://bbr.suprnova.cc:7777 -u -p x -k http://bbr.suprnova.cc/scratchpad.bin -l 64x360
+
+Example for Scrypt-N (2048) on Nicehash
+    ccminer -a scrypt:10 -o stratum+tcp://stratum.nicehash.com:3335 -u 1BiKoJsw88RrSdNthM3DrN4xXFDyjC4Y7Y-p x
+
+For solo-mining you typically use -o http://127.0.0.1:xxxx where xxxx represents
+the rpcport number specified in your wallet's .conf file and you have to pass the same username
+and password with -O (or -u -p) as specified in the wallet config.
+
+The wallet must also be started with the -server option and/or with the server=1 flag in the .conf file
+
+Configuration files
+
+With the -c parameter you can use a json config file to set your prefered settings.
+An example is present in source tree, and is also the default one when no command line parameters are given.
+This allow you to run the miner without batch/script.
+
+System requirements
+
+1) Only Windows 7/8/10 64bit ver
+2) Only Nvidia GPUs
+3) Stability internet connection
+4) Nvidia CUDA v5.2 (min)
+
+Author - Coallabaration (@Coallabaration)
+
+BTC donation address: 1BiKoJsw88RrSdNthM3DrN4xXFDyjC4Y7Y
