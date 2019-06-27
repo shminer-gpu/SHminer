@@ -106,7 +106,7 @@ zr5
 Examples
 
 Example for x16r
-shminer.exe -a x16r -o stratum+tcp://rvn-eu1.nanopool.org: 12222 -u RAmR4ewFUKhc8Vtu1khN6kzjUSqneZCKVs -p c = RVN
+shminer.exe -a x16r -o stratum+tcp://rvn-eu1.nanopool.org: 12222 -u <ADDRESS> -p c = RVN
  
 For solo-mining you typically use -o http://127.0.0.1:xxxx where xxxx represents
 the rpcport number specified in your wallet's .conf file and you have to pass the same username
